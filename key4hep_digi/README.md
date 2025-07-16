@@ -50,3 +50,22 @@ You can keep all your CUDA/SOA pointer & iterator logic, just treat it as an in-
   * Call `writer->Fill()`.
 
 So your SoA code isn't serialized, only its final data is.
+
+```cpp
+// For each fixed-size column
+auto colA = model->MakeField<float>("colA");
+auto colB = model->MakeField<int>("colB");
+// For an array column:
+auto colVec4 = model->MakeField<std::array<float,4>>("colVec4");
+
+for (...) {
+  soa.fillData(...);  // fill your SoA container
+
+  // assign to fields
+  *colA = soa.colA_ptr()[i];
+  *colB = soa.colB_ptr()[i];
+  *colVec4 = soa.getVec4(i);  // give a std::array
+
+  writer->Fill();
+}
+```
