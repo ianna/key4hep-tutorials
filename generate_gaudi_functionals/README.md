@@ -13,7 +13,7 @@ The generator does not replace understanding the framework, and it does not writ
 algorithm for you: you still supply the collection types and names, and you still
 implement the event loop. What it gives you is a clean, compilable starting point.
 
-# Setup
+## Setup
 
 The tutorial needs a Key4hep environment that contains `generateFunctional` (k4FWCore
 with [PR #372](https://github.com/key4hep/k4FWCore/pull/372) or later). On any machine
