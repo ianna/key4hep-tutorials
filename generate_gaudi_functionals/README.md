@@ -34,7 +34,6 @@ From a source checkout it can also be run directly (it is executable) or through
 ```bash
 cd k4FWCore/helpers
 ./generateFunctional --help            # executable
-python3 generateFunctional --help      # needs jinja2 in the environment
 ```
 
 Plain Python execution requires `jinja2`; running through `uv` (`uv run --script generateFunctional ...`)
